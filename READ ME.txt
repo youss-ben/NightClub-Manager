@@ -1,0 +1,137 @@
+Night Club Manager - C# / PostgreSQL Project
+
+Overview:
+
+Night Club Manager is a C# console application connected to a PostgreSQL database, designed to manage all operations of a nightclub. It handles clients, reservations, drinks, employees, and events through a user-friendly console interface enhanced with Spectre.Console.
+
+Main Features:
+
+Automatic creation of the database and tables at first run
+
+Client management (add, update, delete, list)
+
+Reservation management for events
+
+Drink inventory management
+
+Employee management (roles: DJ, Bartender, Security, etc.)
+
+Event management (upcoming parties and special nights)
+
+Full database reset capability
+
+Database Structure:
+
+Tables:
+
+Client
+
+idClient (Primary Key)
+
+name
+
+age
+
+email
+
+phone
+
+Reservation
+
+idReservation (Primary Key)
+
+idClient (Foreign Key -> Client)
+
+idEvent (Foreign Key -> Event)
+
+numberOfGuests
+
+reservationDate
+
+Event
+
+idEvent (Primary Key)
+
+eventName
+
+eventDate
+
+description
+
+Employee
+
+idEmployee (Primary Key)
+
+name
+
+role
+
+salary
+
+hireDate
+
+Drink
+
+idDrink (Primary Key)
+
+drinkName
+
+price
+
+Stock
+
+idStock (Primary Key)
+
+idDrink (Foreign Key -> Drink)
+
+quantity
+
+Technologies Used:
+
+C# 10 / .NET 6.0
+
+PostgreSQL
+
+Npgsql (PostgreSQL connector for C#)
+
+Spectre.Console (for enhanced console interface)
+
+Installation Instructions:
+
+Clone the repository.
+
+Install dependencies:
+
+Run: dotnet add package Npgsql
+
+Run: dotnet add package Spectre.Console
+
+Configure your PostgreSQL connection string: Example: private static readonly string dbConnectionString = "Host=localhost;Port=5432;Username=postgres;Password=yourpassword;Database=nightclubdb";
+
+Build and run the project:
+
+Run: dotnet run
+
+Initial Data Inserted Automatically:
+
+Clients: Example entries like John Doe, Alice Smith
+
+Events: "Electro Night", "Ladies Night", "80’s Party"
+
+Employees: Example DJs, Security staff, and Bartenders
+
+Drinks: Vodka, Whiskey, Champagne
+
+Stock: Pre-filled with realistic quantities
+
+How to Use:
+
+At first launch, the application checks and creates all necessary tables.
+
+If needed, you can reset the entire database using the ClearDatabase() function.
+
+Use the main menu to navigate between managing Clients, Employees, Events, Reservations, Drinks, and Stock.
+
+Author:
+
+Developed by Dimitri Nicolas Sadovenko, Jaffar Nassour, Youssef Benaddi as part of a personal or academic project to master C# application development and database integration.
